@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ky">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>О нас — Qanat.kg</title>
+  <meta name="description" content="Познакомьтесь с командой Qanat.kg." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark">Q</div>
+        <div>
+          <div class="brand">Qanat.kg</div>
+          <div class="muted small">Наш домен, наша команда</div>
+        </div>
+      </div>
+      <nav class="muted">
+        <a href="index.html">Башкы</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="about.html">Биз жөнүндө</a>
+        <a href="blog.html">Блог</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Qanat.kg — <span class="accent">Кто мы</span></h1>
+          <p class="lead">Молодая, энергичная команда IT-специалистов и маркетологов, готовых превратить ваши идеи в реальность.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Наша история</h2>
+        <p class="muted" style="line-height: 1.8; margin-bottom: 16px;">
+          Qanat.kg была создана в 2022 году с простой целью — сделать веб-разработку доступной и эффективной для всех. 
+          Мы начали как стартап из трех человек и превратились в команду профессионалов, которые понимают потребности местного рынка.
+        </p>
+        <p class="muted" style="line-height: 1.8;">
+          Название "Qanat" выбрано не просто так — это историческая система ирригации в Центральной Азии, 
+          символизирующая нашу философию: соединение технологии с практичностью, создание каналов для успеха вашего бизнеса.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Наша команда</h2>
+        <div class="team-grid" id="teamGrid"></div>
+      </section>
+
+      <section class="card">
+        <h2>Почему выбирают нас</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div style="font-size: 28px; margin-bottom: 12px;">🚀</div>
+            <strong>Быстро</strong>
+            <div class="muted" style="margin-top: 8px; font-size: 14px;">Сроки соблюдаются. Обычно даже раньше.</div>
+          </div>
+          <div class="benefit">
+            <div style="font-size: 28px; margin-bottom: 12px;">💡</div>
+            <strong>Креативно</strong>
+            <div class="muted" style="margin-top: 8px; font-size: 14px;">Не просто исполняем — предлагаем идеи.</div>
+          </div>
+          <div class="benefit">
+            <div style="font-size: 28px; margin-bottom: 12px;">📈</div>
+            <strong>Результативно</strong>
+            <div class="muted" style="margin-top: 8px; font-size: 14px;">Цель — ваш успех и ROI.</div>
+          </div>
+          <div class="benefit">
+            <div style="font-size: 28px; margin-bottom: 12px;">🤝</div>
+            <strong>Партнёрски</strong>
+            <div class="muted" style="margin-top: 8px; font-size: 14px;">Вы — наш партнер, не клиент.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Наши ценности</h2>
+        <div class="values-list">
+          <div class="value-item">
+            <strong>Честность</strong> — Прямая коммуникация, без скрытых комиссий.
+          </div>
+          <div class="value-item">
+            <strong>Качество</strong> — Каждая строка кода проверяется.
+          </div>
+          <div class="value-item">
+            <strong>Инновация</strong> — Следим за тренами и используем новые технологии.
+          </div>
+          <div class="value-item">
+            <strong>Поддержка</strong> — Не бросаем сайт после запуска.
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">© Bizning.kg — Наш домен, наша команда</footer>
+  </div>
+
+  <script>
+    const teamMembers = [
+      {
+        name: 'имя Фамилия',
+        role: 'Основатель, Full-Stack разработчик',
+        bio: 'Эксперт в веб-технологиях, 5+ лет опыта.'
+      },
+      {
+        name: 'имя Фамилия',
+        role: 'Дизайнер UX/UI',
+        bio: 'Создает красивые и удобные интерфейсы.'
+      },
+      {
+        name: 'имя Фамилия',
+        role: 'Front-end разработчик',
+        bio: 'Мастер React и современного JavaScript.'
+      },
+      {
+        name: 'Адылбеков Муслим',
+        role: 'SEO специалист',
+        bio: 'Делает сайты видимыми в поисковых системах.'
+      },
+    {
+        name: 'имя Фамилия',
+        role: 'Маркетолог',
+        bio: 'Разрабатывает стратегии для роста вашего бизнеса.'
+        }
+
+
+    ];
+
+    const teamGrid = document.getElementById('teamGrid');
+    teamMembers.forEach(member => {
+      const card = document.createElement('div');
+      card.className = 'team-card';
+      card.innerHTML = `
+        <div style="padding: 18px; text-align: center;">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent), #55b0ff); border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px;">
+            ${member.name.charAt(0)}
+          </div>
+          <strong style="display: block; margin-bottom: 6px; font-size: 16px;">${member.name}</strong>
+          <div style="color: var(--accent); font-size: 12px; margin-bottom: 10px; font-weight: 600;">${member.role}</div>
+          <p class="muted" style="margin: 0; font-size: 13px;">${member.bio}</p>
+        </div>
+      `;
+      teamGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

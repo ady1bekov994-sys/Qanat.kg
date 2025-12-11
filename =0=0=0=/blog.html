@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ky">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Блог — Qanat.kg</title>
+  <meta name="description" content="Статьи о веб-разработке, дизайне и маркетинге." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark">Q</div>
+        <div>
+          <div class="brand">Qanat.kg</div>
+          <div class="muted small">Наш домен, наша команда</div>
+        </div>
+      </div>
+      <nav class="muted">
+        <a href="index.html">Башкы</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="about.html">Биз жөнүндө</a>
+        <a href="blog.html">Блог</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Блог — <span class="accent">Знания и опыт</span></h1>
+          <p class="lead">Полезные статьи о веб-разработке, дизайне и маркетинге для вашего бизнеса.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Последние статьи</h2>
+        <div class="blog-grid" id="blogGrid"></div>
+      </section>
+
+      <section class="card">
+        <h2>Категории</h2>
+        <div class="categories">
+          <button class="category-btn active" data-category="all">Все</button>
+          <button class="category-btn" data-category="development">Разработка</button>
+          <button class="category-btn" data-category="design">Дизайн</button>
+          <button class="category-btn" data-category="marketing">Маркетинг</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">© Bizning.kg — Наш домен, наша команда</footer>
+  </div>
+
+  <script>
+    const blogPosts = [
+      {
+        id: 1,
+        title: 'Как создать эффективный лендинг?',
+        category: 'development',
+        excerpt: 'Лендинг — это не просто красивая страница. Это инструмент продаж, который должен конвертировать посетителей в клиентов.',
+        date: '10 декабря 2025',
+        readTime: '5 мин'
+      },
+      {
+        id: 2,
+        title: 'Основы UX/UI дизайна для веб-сайтов',
+        category: 'design',
+        excerpt: 'Хороший дизайн — это не просто красота. Это функциональность, доступность и удобство пользователя.',
+        date: '8 декабря 2025',
+        readTime: '7 мин'
+      },
+      {
+        id: 3,
+        title: 'SEO в 2025: что изменилось?',
+        category: 'marketing',
+        excerpt: 'Алгоритмы поисковых систем постоянно развиваются. Узнайте, как оставаться в топе выдачи.',
+        date: '5 декабря 2025',
+        readTime: '8 мин'
+      },
+      {
+        id: 4,
+        title: 'React vs Vue: выбираем фреймворк',
+        category: 'development',
+        excerpt: 'Сравнение двух популярных фреймворков для создания современных веб-приложений.',
+        date: '1 декабря 2025',
+        readTime: '10 мин'
+      },
+      {
+        id: 5,
+        title: 'Цветовая палитра: психология цвета в дизайне',
+        category: 'design',
+        excerpt: 'Правильный выбор цветов может существенно повлиять на восприятие вашего бренда.',
+        date: '28 ноября 2025',
+        readTime: '6 мин'
+      },
+      {
+        id: 6,
+        title: 'Контент-маркетинг: создание ценной информации',
+        category: 'marketing',
+        excerpt: 'Клиенты хотят не рекламу, а полезную информацию. Рассказываем, как это организовать.',
+        date: '25 ноября 2025',
+        readTime: '7 мин'
+      }
+    ];
+
+    const blogGrid = document.getElementById('blogGrid');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+
+    function renderBlog(category = 'all') {
+      blogGrid.innerHTML = '';
+      const filtered = category === 'all' ? blogPosts : blogPosts.filter(post => post.category === category);
+      
+      filtered.forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'blog-card';
+        card.innerHTML = `
+          <div style="padding: 18px;">
+            <div style="color: var(--accent); font-size: 11px; margin-bottom: 10px; font-weight: 600; text-transform: uppercase;">
+              ${post.category === 'development' ? '💻 Разработка' : post.category === 'design' ? '🎨 Дизайн' : '📊 Маркетинг'}
+            </div>
+            <h3 style="margin: 0 0 10px 0; font-size: 18px; line-height: 1.4;">${post.title}</h3>
+            <p class="muted" style="margin: 10px 0; font-size: 14px;">${post.excerpt}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+              <div class="muted" style="font-size: 12px;">${post.date} • ${post.readTime} чтения</div>
+              <a href="#" style="color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 600;">Читать →</a>
+            </div>
+          </div>
+        `;
+        blogGrid.appendChild(card);
+      });
+    }
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        renderBlog(e.target.dataset.category);
+      });
+    });
+
+    renderBlog();
+  </script>
+</body>
+</html>

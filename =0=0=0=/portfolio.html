@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ky">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Портфолио — Qanat.kg</title>
+  <meta name="description" content="Биздин ишченец жана достигнутых результатов." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark">Q</div>
+        <div>
+          <div class="brand">Qanat.kg</div>
+          <div class="muted small">Наш домен, наша команда</div>
+        </div>
+      </div>
+      <nav class="muted">
+        <a href="index.html">Башкы</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="about.html">Биз жөнүндө</a>
+        <a href="blog.html">Блог</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Портфолио — <span class="accent">Биздин лучшие проекты</span></h1>
+          <p class="lead">Реальные проекты, реальные результаты. Смотрите, что мы делали для своих клиентов.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Кейс-Исследования</h2>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+      </section>
+
+      <section class="card" id="stats">
+        <h2>Наши цифры</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Проектов завершено</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">30+</div>
+            <div class="stat-label">Довольных клиентов</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2+</div>
+            <div class="stat-label">Лет на рынке</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Служба поддержки</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Технологии, которые мы используем</h2>
+        <div class="tech-grid">
+          <div class="tech-item">HTML5 / CSS3</div>
+          <div class="tech-item">JavaScript (Vanilla)</div>
+          <div class="tech-item">React</div>
+          <div class="tech-item">Node.js</div>
+          <div class="tech-item">MySQL / MongoDB</div>
+          <div class="tech-item">WordPress</div>
+          <div class="tech-item">Figma (дизайн)</div>
+          <div class="tech-item">Git / GitHub</div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">© Bizning.kg — Наш домен, наша команда</footer>
+  </div>
+
+  <script>
+    const portfolioItems = [
+      {
+        title: 'Кафе "Нарын"',
+        category: 'Лендинг',
+        description: 'Красивый лендинг для кафе с меню, бронированием столиков и галереей.',
+        tech: 'HTML, CSS, JS, PHP',
+        result: '+40% онлайн заказов за 3 месяца'
+      },
+      {
+        title: 'Онлайн магазин электроники',
+        category: 'E-commerce',
+        description: 'Полнофункциональный интернет-магазин с каталогом, корзиной и системой оплаты.',
+        tech: 'React, Node.js, MongoDB',
+        result: 'Первый заказ через 2 дня после запуска'
+      },
+      {
+        title: 'Корпоративный сайт',
+        category: 'Сайт компании',
+        description: 'Профессиональный сайт для IT компании с портфолио и блогом.',
+        tech: 'WordPress, SEO оптимизация',
+        result: '+100 заявок в месяц'
+      },
+      {
+        title: 'Приложение доставки',
+        category: 'Веб-приложение',
+        description: 'Платформа для заказа доставки с отслеживанием в реальном времени.',
+        tech: 'React Native, Firebase',
+        result: '5000+ активных пользователей'
+      }
+    ];
+
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    portfolioItems.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'portfolio-card';
+      card.innerHTML = `
+        <div style="padding: 18px;">
+          <div style="color: var(--accent); font-size: 12px; margin-bottom: 8px; font-weight: 600;">${item.category}</div>
+          <strong style="display: block; margin-bottom: 8px; font-size: 18px;">${item.title}</strong>
+          <p class="muted" style="margin: 10px 0;">${item.description}</p>
+          <div style="margin: 12px 0; padding: 10px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+            <div class="muted" style="font-size: 12px;">Технологии: ${item.tech}</div>
+          </div>
+          <div style="color: var(--accent-2); font-weight: 600; margin-top: 10px;">✓ ${item.result}</div>
+        </div>
+      `;
+      portfolioGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
