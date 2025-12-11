@@ -8,8 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'file:///github/workspace/=0=0=0=/index.html',
-    trace: 'on-first-retry',
+    baseURL: 'file://${__dirname}/=0=0=0=/index.html',    trace: 'on-first-retry',
   },
   projects: [
     {
