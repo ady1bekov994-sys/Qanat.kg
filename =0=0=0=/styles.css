@@ -94,4 +94,39 @@ input, textarea{background:transparent; border:1px solid rgba(255,255,255,0.06);
   .blog-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .tech-grid{grid-template-columns:repeat(2,1fr)}
+
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width:768px){
+ body{padding:16px;}
+ .wrap{width:100%;}
+ header{flex-direction:column;align-items:flex-start;margin-bottom:16px}
+ .brand{font-size:18px}
+ h1{font-size:20px;margin:0 0 6px 0}
+ .hero{grid-template-columns:1fr;gap:16px}
+ .grid-3{grid-template-columns:1fr}
+ .prices{flex-direction:column}
+ .price{flex:1}
+ .stats-grid{grid-template-columns:repeat(2,1fr)}
+ .steps{flex-direction:column}
+ .features{flex-direction:column}
+ input,textarea{font-size:16px;padding:8px}
+ .btn{padding:8px 12px;font-size:14px}
+ .modal-card{width:95%;padding:14px}
+}
+
+/* Мобильные телефоны (до 480px) */
+@media (max-width:480px){
+ body{padding:12px;font-size:14px}
+ h1{font-size:18px}
+ .mark{width:36px;height:36px}
+ .brand{font-size:16px}
+ .btn{padding:6px 10px;font-size:12px}
+ nav a{margin-left:8px;font-size:12px}
+ .card{padding:16px}
+ .stats-grid{grid-template-columns:1fr}
+ .modal-card{width:98%;padding:12px}
+ input,textarea{font-size:14px}
+ .stat-num{font-size:24px}
 }
